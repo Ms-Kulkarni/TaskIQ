@@ -58,8 +58,25 @@ export function LoginFrom() {
         </CardHeader>
         <CardContent>
             <Form {...form}>
-                <form>
-                    
+                <form onsubmit={form.handleSubmit(onSubmit)}>
+                    <div calssName="grid gap-6">
+                      <div className="flex flex-col gap-4">
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                          disabled={isPending}
+                        >
+                          continue with GitHUb
+                        </Button>
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                          disabled={isPending}
+                        >
+                          continue with Google
+                        </Button>
+                      </dev>
+                    </div>
                 </from>
             </Form>
         </CardContent>
