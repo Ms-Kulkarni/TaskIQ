@@ -66,15 +66,50 @@ export function LoginFrom() {
                           className="w-full"
                           disabled={isPending}
                         >
-                          continue with GitHUb
+                          Continue with GitHUb
                         </Button>
                         <Button
                           variant="outline"
                           className="w-full"
                           disabled={isPending}
                         >
-                          continue with Google
+                          Continue with Google
                         </Button>
+                        <div className='grid gap-6'>
+                          <FormField
+                            control={for,.control}
+                            name="email"
+                            render={({field}) => {
+                              <FormItem>
+                                <FromLable>Email</FromLable>
+                                <FormControl>
+                                  <Input
+                                    type='email'
+                                    placeholder='example@gmail.com'
+                                    {...field}
+                                  />
+                                  <FormField
+                                  control={for,.control}
+                                  name="password"
+                                  render={({field}) => {
+                                    <FormItem>
+                                      <FromLable>Passwrod</FromLable>
+                                      <FormControl>
+                                        <Input
+                                          type='password'
+                                          placeholder='password'
+                                          {...field}
+                                        />
+                                        <Button
+                                          type='submit'
+                                          className='w-full' disabled={isPending}
+                                        >Login</Button>
+                                        
+                                </FormControl>
+                              </FormItem>
+                            }}
+                          />
+                        </div>
                       </dev>
                     </div>
                 </from>
