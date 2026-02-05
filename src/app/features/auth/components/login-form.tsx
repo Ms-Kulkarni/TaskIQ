@@ -82,7 +82,9 @@ export function LoginForm(){
                                 </Button>
 
                             </div>
+
                             <div>
+
                                 <FormField
                                     control={form.control}
                                     name="email"
@@ -118,7 +120,8 @@ export function LoginForm(){
                                 <Button type="submit" className='w-full' disabled={isPending}>Login</Button>
 
                             </div>
-                            <div className='text-center text-sm'>
+                            <div 
+                            className='text-center text-sm'>
                                  Don't have an account? {" "}
                                  <Link 
                                     href="/signup"
