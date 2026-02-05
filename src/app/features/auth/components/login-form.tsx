@@ -86,6 +86,7 @@ export function LoginForm(){
                             <div>
 
                                 <FormField
+
                                     control={form.control}
                                     name="email"
                                     render={({field}) => (
@@ -93,6 +94,7 @@ export function LoginForm(){
                                             <FormLabel 
                                                 className=''
                                             >Email</FormLabel>
+                                            
                                             <FormControl>
                                                 <Input
                                                     type="email"
