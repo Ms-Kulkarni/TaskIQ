@@ -24,6 +24,7 @@ import {
     FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { Register } from '@tanstack/react-query';
 
 const registerForm = z.object({
     email: z.string().email("Please enter a valid email address").min(1, "Email is required"),
@@ -51,9 +52,24 @@ export function RegisterForm(){
 
     });
 
-    const onSubmit = async (values: LoginFormValue ) => {
-        console.log(values);
-    };
+    const onSubmit = async (values: RegisterFormValues ) => {
+        await authClient.signUp.email(
+            {
+                name: values.email,
+                email: values.email,
+                password: values.password,
+                callbackUrl: "/",
+            }, 
+            {
+                onSuccess: () => {
+                    router.push("/");
+
+                }, 
+                onError: (ctx) => {
+                    toast.error(ctx.error.message);
+                }
+            }
+        )
 
     const isPending = form.formState.isSubmitting;
 
